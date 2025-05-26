@@ -18,4 +18,4 @@ router(config-if)no shutdown
 
 
 In this configuration we did the R1 configuration and from sw1 to r1 and r1 to r2.
-i[image alt] (https://github.com/itswaqashere/router-configuring-static-routes/blob/main/router%20static%20config.PNG?raw=true)
+i[image alt](https://github.com/itswaqashere/router-configuring-static-routes/blob/main/router%20static%20config.PNG?raw=true)
