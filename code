@@ -6,16 +6,26 @@ for send packets and secure the connection.
 CLI Command 
 router>en
 router#config t
-router(config)int G 0/0/0
-router(config-if) ip add 192.168.1.254 255.255.255.0         // 192.168.1.254 is the gateway we entered.
-router(config-if)desc ## sw1 ##
-router(config-if)no shutdown
-router (config-if) do show ip int breif    // it will show the inferfaces that are connected.
-router(config-if) int G/0/0/1
-router(config-if)ip add 192.168.12.1 255.255.255.0 
-router(config-if)desc ## R2 ##
-router(config-if)no shutdown
+router(config)#int G 0/0/0
+router(config-if)#ip add 192.168.1.254 255.255.255.0         // 192.168.1.254 is the gateway we entered.
+router(config-if)#desc ## sw1 ##
+router(config-if)#no shutdown
+router (config-if)#do show ip int breif    // it will show the inferfaces that are connected.
+router(config-if)#int G/0/0/1
+router(config-if#ip add 192.168.12.1 255.255.255.0 
+router(config-if)#desc ## R2 ##
+router(config-if)#no shutdown
 
 
 In this configuration we did the R1 configuration and from sw1 to r1 and r1 to r2.
-i[image alt](https://github.com/itswaqashere/router-configuring-static-routes/blob/main/router%20static%20config.PNG?raw=true)
+
+For R2 Configuration 
+r2>en
+r2#config t
+r2(config)#int G 0/0/0
+r2(config-if)# ip add 192.168.12.2 255.255.255.0
+r2(config-if)#desc ## r1 ##
+r2(config-if)#no shutdown
+r2(config-if)#do sh ip int breif
+
+it will show the interface and the router 2 is connected to router one for sending packets.
