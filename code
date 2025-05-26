@@ -1,0 +1,21 @@
+In this repository we going to know how we can do manually configuration of a router or do static configuration in packet traser
+step  by step instruction 
+firstly we need to add gateway address to the PC1 when have in the lan and then we goes to the R1 and start the configuration. After Adding the gateway address we need to go to the CLI command.
+let say we have 2 lan network and we need to send packet to PC1 to PC2 and PC2 is in differnet lan so in this repository we are going to know how can we do the manual router to router configuration
+for send packets and secure the connection.
+CLI Command 
+router>en
+router#config t
+router(config)int G 0/0/0
+router(config-if) ip add 192.168.1.254 255.255.255.0         // 192.168.1.254 is the gateway we entered.
+router(config-if)desc ## sw1 ##
+router(config-if)no shutdown
+router (config-if) do show ip int breif    // it will show the inferfaces that are connected.
+router(config-if) int G/0/0/1
+router(config-if)ip add 192.168.12.1 255.255.255.0 
+router(config-if)desc ## R2 ##
+router(config-if)no shutdown
+
+
+In this configuration we did the R1 configuration and from sw1 to r1 and r1 to r2.
+
